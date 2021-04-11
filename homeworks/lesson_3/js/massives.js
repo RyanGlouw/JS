@@ -15,19 +15,18 @@
 // 3. Создать массив из целых чисел.
 // Отрицательные элементы массива скопировать в новый массив.
 
-
-// здесь minArr имеет тип string, вопрос как сделать minArr типа array
 let numbers = [1,-2,3,-4,5];
 let minArr = [];
 for (let i = 0; i < numbers.length; i ++) {
  if(numbers[i] <= 0){
-    minArr += numbers.splice(i,1);
+    let num = numbers.splice(i,1);
+    minArr.push(num);
 }
 }
-console.log(numbers);
 console.log(minArr);
+console.log(numbers); // более сложный вариант
 
 let numbers = [1,-2,-3,4,5];
 let minArr = numbers.splice(1,2);
 console.log(minArr);
-console.log(numbers);
+console.log(numbers); // более простой и не практичный
