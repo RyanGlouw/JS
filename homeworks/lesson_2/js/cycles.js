@@ -58,7 +58,7 @@ switch(operator){
 // Число 345 не содержится в интервале (25;200)
 // Число 110 содержится в интервале (25;200)
 
-let randomNum = Math.floor(Math.random() * 500) + 1;
+let randomNum = Math.floor(Math.random() * 500) + 0;
 if (randomNum <= 25) {
     console.log('число ' + randomNum + ' не в интервале 25-200');
 } else if (randomNum >= 25 && randomNum <= 200) {
@@ -116,3 +116,14 @@ for (let i = 1; i <= 10; i++) {
 // Программа может задавать пользователю вопросы:
 // Число равно ...? / Число больше ...? / Число меньше ...? и в зависимоти от ответа пользователя принимать решения.
 // Вместо текстовых ответов ДА/НЕТ, можно использовать числа 0 - НЕТ и 1 - ДА
+
+// let minimum = 1, maximum = 100; // пользователь задает мин и макс число
+// while (true) { 
+    // tmp minimum + maximum / 2
+    // answer число равно tmp? break
+    // если answer равно 1 -> break
+    // asnwer = это число меньше tmp?
+    // если answer равно 1 -> maximum = tmp
+    // если answer равно 0 -> minimum = tmp
+
+//}
