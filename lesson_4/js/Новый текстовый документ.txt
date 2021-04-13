@@ -1,0 +1,36 @@
+function getSum(first, second) { // параметры функции, функции в js можно работать напрямую
+    return first + second;
+}
+
+let l = 9, k = -166;
+
+let sum = getSum(l, k);
+console.log(sum);
+
+let x = 9, y = 91;
+
+sum = getSum(x, y);
+console.log(sum);
+
+console.log(getSum())
+
+
+// function getNum (first, second){
+//     return first < second ? first : second;
+// }
+// console.log(getNum(1,2));
+
+
+// function getNum(a, b) {
+//     if (a < b) return a;
+//     return b;
+
+// }
+// console.log(getNum1(1, 2));
+
+function greetingStr(age, name){ // функция принимает возвраст и имя и формирует строку приветствия
+    if( age < 7 || age > 200) return 'укажите др возраст';
+    if (age < 18) return 'вы не можете совершать покупки';
+    return `Привет ${name} вам уже ${age}`
+}
+console.log(greetingStr('Максим',26));

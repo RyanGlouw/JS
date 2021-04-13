@@ -32,29 +32,23 @@
 
 
 // не разобрался до конца
-let randomArr = []
-for (let i = 0; i < 7; i++) {
-    let numRandom = Math.floor(Math.random() * 100);
-    randomArr.unshift(numRandom);
-}
-console.log(randomArr);
 
-let min = randomArr;
-let max = randomArr;
+let num = [34, 78, -90, 1, 0, -5];
+let min = Number.MAX_VALUE; // -90
+let max = Number.MIN_VALUE;
+let minInd = 0;
+for (let i = 0; i < num.length; i++) {
+    if (num[i] < min) {
+        min = num[i];
+        minInd = i;
+    } // в цикле просто if -оф может быть любое колличество
+    if (num[i] > max) {
+        max = num[i];
+    }
 
-for (let j = 0; j < randomArr.length; j++){
-    if(randomArr[j] < min){
-        min = randomArr[j];
-    }
-    if(randomArr[j] > max){
-        max = randomArr[j];
-    }
 }
 
-console.log(randomArr);
-
-
-
+num[minInd] = max;
 
 // 3. Создать массив из целых чисел.
 // Отрицательные элементы массива скопировать в новый массив.
@@ -74,3 +68,12 @@ console.log(randomArr);
 // let minArr = numbers.splice(1, 2);
 // console.log(minArr);
 // console.log(numbers); // более простой и не практичный
+
+let numbers = [1, -2, 3, -4, 5, -6];
+let newNums = [];
+for (let i = nums.length; i >= 0; i -= 1) {
+    if (nums[i] < 0) {
+        newNums.push(nums[i]);
+    }
+}
+
