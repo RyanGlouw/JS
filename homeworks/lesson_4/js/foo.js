@@ -7,10 +7,10 @@
 
 function ingWord(count) {
     let word = 'товар';
-    let ing = ['a','ов']
-    if( count < 2) return word;
-    if( count >= 2 && count <= 4) return count + ' ' + word + ing[0];
-    if( count > 4) return count + ' ' +  word + ing[1];
+    let ing = ['a', 'ов']
+    if (count < 2) return word;
+    if (count >= 2 && count <= 4) return count + ' ' + word + ing[0];
+    if (count > 4) return count + ' ' + word + ing[1];
 }
 console.log(ingWord(20));
 
@@ -39,7 +39,7 @@ function range(start, end, step = 1) {
 
     return result;
 };
-console.log(range(1, 10, 2))
+console.log(range(1, 10, 2));
 
 
 
@@ -53,35 +53,55 @@ function noSpam(text, ...words) {
     let word = words;
     word = text.split(" ");
     let spam = 'bla';
-    for (let i = 0; i < word.length; i++){
-        if (word[i] === spam && word.length >= 1 && word.length <= 25){
-            return 'Кол-во спам слов = 1 баллу' ;
-        }else if (word[i] === spam && word.length >= 26 && word.length <= 50){
+    for (let i = 0; i < word.length; i++) {
+        if (word[i] === spam && word.length >= 1 && word.length <= 25) {
+            return 'Кол-во спам слов = 1 баллу';
+        } else if (word[i] === spam && word.length >= 26 && word.length <= 50) {
             return 'Кол-во спам слов = 2 балам'
-        }else if (word[i] === spam && word.length >= 51 && word.length <= 75){
+        } else if (word[i] === spam && word.length >= 51 && word.length <= 75) {
             return 'Кол-во спам слов = 3 балам'
-        }else if (word[i] === spam && word.length >= 76 && word.length < 100){
+        } else if (word[i] === spam && word.length >= 76 && word.length < 100) {
             return 'Кол-во спам слов = 4 балам'
-        }else if (word[i] === spam && word.length > 100){
+        } else if (word[i] === spam && word.length > 100) {
             return 'Кол-во спам слов = 5 балам'
-        }else return 'Спам слова не найдены';
+        } else return 'Спам слова не найдены';
     }
 }
 
+// 3. Написать функцию проверки на спам checkSpam(text, ...words)
+// Функция принимает на вход текст и ...спам - слова
+// (переменное количество аргументов).
+// Определить по 5ти бальной шкале, как часто в тексте встречается спам.
+// Результат вернуть из функции.
 
-console.log(noSpam('bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla '));
 
+//4. вывести массив из уникальных (не повторяющихся слов)
 
+function uniqueWord(...words) {
+    let uniqueArr = [];
 
-// 4. На методы массивов (functions-2)
+    for (let word of words) {
+        if (!uniqueArr.includes(word)) {
+            uniqueArr.push(word)
+        }
+    }
+    return uniqueArr;
+}
 
-//         Дан массив:
-//         let numsArr = [
-//             [3, 5, -1, 6, 0],
-//             [56, -9, 111, 6],
-//             [11, 86, -12],
-//         ];
+console.log(uniqueWord('one', 'two', 'one'));
 
-//         1. Увеличить каждый элемент массива на 10
-//         2. Создать массив, в который войдут положительные элементы numsArr
+//5. функция принимает на вход самое длинное слово из предложения и выводит его
 
+let getLongestWord = sentence => {
+    let currentLongestWord = '';
+    let sentenceArr = sentence.split(" ");
+
+    for (let word of sentenceArr) {
+        if (word.length > currentLongestWord.length) {
+            currentLongestWord = word
+        }
+    }
+    return `${currentLongestWord} (${currentLongestWord.length} letters)`;
+}
+let sentence = 'A brown gox jumped over a lazy dog';
+console.log(getLongestWord(sentence));
