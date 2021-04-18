@@ -11,7 +11,7 @@
 //  - палиндром.
 
 function palindrom(str){
-    str = str.toLowerCase().replase(/\s/g,'');
+    str = str.toLowerCase();
     let reversed = str.split('').reverse().join('');
     if(reversed === str){
         return true;
@@ -22,8 +22,8 @@ console.log(palindrom('Ротор'));
 
 function palindrom(str){
     str = str.toLowerCase().replace(/\s/g,'');
-    isPalindrome = str === str.split('').reverse().join('');
-    return isPalindrome;
+    isPalindrom = str === str.split('').reverse().join('');
+    return isPalindrom;
 }
 
 console.log(palindrom('а роза упала на лапу Азора'));
