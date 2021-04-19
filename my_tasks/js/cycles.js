@@ -273,14 +273,56 @@
 
 // Дан массив с числами. С помощью цикла выведите на экран все элементы, значение которых совпадает с их порядковым номером в массиве.
 
+// let arr = [1, 2, 3,3];
+// for (let i = 0; i < arr.length; i++){
+//     if(arr[i] === i){
+//         console.log(arr[i]);
+//     }
+// }
+
 
 // Дан массив с числами. С помощью цикла for и функции document.write выведите каждый элемент массива с новой строки. Используйте для этого тег br.
 
+// let arr = [1, 2, 3,3];
+// for(let i = 0; i < arr.length; i++){
+//     document.write(arr[i] + '<br>')
+// }
 
 // Дан массив с числами. С помощью цикла for и функции document.write выведите каждый элемент массива в отдельном абзаце.
+
+//     let arr = [1, 2, 3,3];
+// for(let i = 0; i < arr.length; i++){
+//     document.write('<p>' + arr[i] + '</p>' + '<br>')
+// }
 
 
 // Составьте массив дней недели. С помощью цикла for выведите все дни недели, а выходные дни выведите жирным.
 
+// let dayOfWeek = ['пн','вт','ср','чт','пт','сб','вскр'];
+
+// for (let i = 0; i < dayOfWeek.length; i++){
+//  if(i == 5 || i == 6 ){
+//     document.write( '<b>' + dayOfWeek[i] + '</b>')
+//     document.write( ' ' )
+//  }else 
+//     document.write( dayOfWeek[i])
+//     document.write( ' ' )
+// }
+
+
+
+
 
 // Составьте массив дней недели. С помощью цикла for выведите все дни недели, а текущий день выведите курсивом. Номер текущего дня должен храниться в переменной day.
+
+// let dayOfWeek = ['пн','вт','ср','чт','пт','сб','вскр'];
+// let dayToday = 1;
+
+// for (let i = 0; i < dayOfWeek.length; i++){
+//  if(i == dayToday){
+//     document.write( '<i>' + dayOfWeek[i] + '</i>')
+//     document.write( ' ' )
+//  }else 
+//     document.write( dayOfWeek[i])
+//     document.write( ' ' )
+// }
