@@ -117,3 +117,15 @@ console.log(getBooks(books, 'Пушкин'));
 
 // Задача 4
 // Отсортировать массив books по значению свойства title вложенных объектов.
+
+function sortFunc(a,b){
+if (a.title < b.title){
+return -1;
+}
+if (a.title > b.title){
+return 1;
+}
+return 0;
+}
+
+console.log(books.sort(sortFunc))
