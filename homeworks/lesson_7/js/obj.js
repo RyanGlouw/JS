@@ -105,13 +105,13 @@ let books = [
 
 function getBooks(arrOfAuthors,name){
     let booksOfAuthor = [];
-    for (let prop in arrOfAuthors){
-        if(arrOfAuthors[prop].author === name){
-            booksOfAuthor.push(arrOfAuthors[prop].title);
-    } 
-}
+    for (let object of arrOfAuthors){
+        if(object.author === name){ 
+            booksOfAuthor.push(object.title);
+        } 
+    }
 
-return `Книги: ${booksOfAuthor}`;
+    return `Книги: ${booksOfAuthor}`;
 }
 console.log(getBooks(books, 'Пушкин'));
 
