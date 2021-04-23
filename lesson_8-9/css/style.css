@@ -1,0 +1,304 @@
+body {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.light-pink-background {
+    background-color: #EEE2DC;
+}
+
+.blue-color {
+    color: #123C69;
+}
+
+header {
+    background-color: #AC3B61;
+}
+
+footer {
+    background-color: #123C69;
+}
+
+footer a {
+    color: #BAB2B5;
+}
+
+.text-center {
+    text-align: center;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* MENU nav ul li a */
+
+header {
+    display: flex;
+    align-items: start;
+    line-height: 100px;
+}
+
+header form {
+    margin-left: auto;
+    margin-right: 5rem;
+}
+
+.submenu {
+    /*display: none;*/
+    /*opacity: 0;*/
+}
+
+.menu > li {
+    display: inline-block;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.menu,
+.menu a {
+    color: #EDC7B7;
+    text-transform: uppercase;
+}
+
+
+/* ФОРМА ПОИСКА */
+header input[type="text"] {
+    border-style: none;
+    /* outline - контур элемента, появляется, когда input в фокусе */
+    outline-style: none;
+    color: #123C69;
+    font-size: 1.5rem;
+    background: #EEE2DC;
+    border-radius: 5px;
+    padding: 0.5rem 0.5rem 0.5rem 2.5rem;
+}
+
+form > span {
+    position: relative;
+}
+
+form .icon {
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    color: #123C69;
+}
+
+/*
+.container-1 input#search::-webkit-input-placeholder {
+    color: #65737e;
+}
+
+.container-1 input#search:-moz-placeholder { !* Firefox 18- *!
+    color: #65737e;
+}
+
+.container-1 input#search::-moz-placeholder {  !* Firefox 19+ *!
+    color: #65737e;
+}
+
+.container-1 input#search:-ms-input-placeholder {
+    color: #65737e;
+}*/
+
+/* ТЕНИ НА ТЕКСТЕ */
+
+.text-shadow-blue,
+.text-shadow-red {
+    font-size: 4rem;
+    color: transparent;
+    text-shadow: 0 2px 3px rgba(255, 255, 255, 0.5);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+}
+
+.text-shadow-blue {
+    background-color: #123C69;
+}
+
+.text-shadow-red {
+    background-color: #AC3B61;
+}
+
+
+/* FOOTER СПРАЙТЫ */
+
+footer {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: space-around;
+}
+
+.social {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+}
+
+.social a {
+    display: inline-block;
+    background: url("../img/sprites2.png") no-repeat;
+    width: 98px;
+    height: 98px;
+    transition: background-position 1s;
+}
+
+.social .fb {
+    background-position: 0 -100px;
+}
+
+.social .insta {
+    background-position: -300px -100px;
+}
+
+.social .yt {
+    background-position: -200px -100px;
+}
+
+.social .fb:hover {
+    background-position: 0 0;
+    transition: background-position 1s;
+}
+
+.social .insta:hover {
+    background-position: -300px 0;
+    transition: background-position 1s;
+}
+
+.social .yt:hover {
+    background-position: -200px 0;
+    transition: background-position 1s;
+}
+
+
+/* ВЫПАДАЮЩЕЕ МЕНЮ */
+
+.submenu {
+    position: relative;
+    cursor: pointer;
+}
+
+.submenu > ul {
+    position: absolute;
+    left: 2rem;
+    right: 3rem;
+    background-color: #AC3B61;
+    z-index: 6;
+    padding-left: 4px;
+    padding-right: 4px;
+    text-align: center;
+    overflow: hidden;
+    height: 0;
+}
+
+.submenu li {
+    border-bottom: 2px solid #EDC7B7;
+}
+
+.submenu li:last-child {
+    border-bottom: none;
+}
+
+.menu .submenu:hover ul {
+    height: 300px;
+    transition: all 1s;
+}
+
+.submenu:hover,
+.menu li:hover > a{
+    color: #EEE2DC;
+}
+
+header {
+    flex-wrap: wrap;
+}
+
+@media (max-width: 539px) {
+    html {
+        font-size: 13px;
+    }
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+    header form {
+        display: none;
+    }
+    ul.menu {
+        margin: 0;
+        padding: 0;
+    }
+    .menu > li {
+        display: block;
+    }
+    .submenu > ul {
+        position: static;
+    }
+    footer {
+        grid-template-columns: repeat(2, auto);
+        justify-content: space-around;
+    }
+    .social {
+        grid-column: 1 / 3;
+        grid-row: 3 / 4;
+        text-align: center;
+        transform: scale(0.7);
+    }
+}
+
+@media (min-width: 540px) and (max-width: 767px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+    header form {
+        margin: 0;
+    }
+    ul.menu {
+        margin: 0;
+        padding: 0;
+    }
+    .menu > li {
+        display: block;
+    }
+    .submenu > ul {
+        position: static;
+    }
+    footer {
+        grid-template-columns: repeat(2, auto);
+        justify-content: space-around;
+    }
+    .social {
+        grid-column: 1 / 3;
+        grid-row: 3 / 4;
+        text-align: center;
+        transform: scale(0.7);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 960px){
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+

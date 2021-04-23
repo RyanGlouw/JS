@@ -1,0 +1,17 @@
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.card {
+    border: 2px solid royalblue;
+    border-radius: 10px;
+    flex: 1;
+
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
