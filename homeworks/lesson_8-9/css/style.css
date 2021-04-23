@@ -1,0 +1,14 @@
+.table {
+    border: 2px solid black;
+    text-align: center;
+}
+.th {
+    background-color: cornsilk;
+    border: 2px solid black;
+
+}
+.td {
+    border: 2px solid black;
+    background-color: rgb(91, 238, 213);
+
+}

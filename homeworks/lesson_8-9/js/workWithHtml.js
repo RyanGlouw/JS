@@ -37,78 +37,99 @@
 // Например, для articles заголовками будут: id, title, text, author; для goods заголовками будут: title, price, count и тп.
 
 //         Массивы для тестирования:
-//         let articles = [
-//             {
-//                 id: 1,
-//                 title: "JS",
-//                 text: "Статья про JS",
-//                 author: "Александр"
-//             },
-//             {
-//                 id: 2,
-//                 title: "PHP",
-//                 text: "Статья про PHP",
-//                 author: "Виталий"
-//             },
-//             {
-//                 id: 3,
-//                 title: "Базы Данных",
-//                 text: "Статья про Базы Данных",
-//                 author: "Евгения"
-//             },
-//             {
-//                 id: 4,
-//                 title: "HTML",
-//                 text: "Статья про HTML",
-//                 author: "Виталий"
-//             }
-//         ];
+let articles = [
+    {
+        id: 1,
+        title: "JS",
+        text: "Статья про JS",
+        author: "Александр"
+    },
+    {
+        id: 2,
+        title: "PHP",
+        text: "Статья про PHP",
+        author: "Виталий"
+    },
+    {
+        id: 3,
+        title: "Базы Данных",
+        text: "Статья про Базы Данных",
+        author: "Евгения"
+    },
+    {
+        id: 4,
+        title: "HTML",
+        text: "Статья про HTML",
+        author: "Виталий"
+    }
+];
 
-//         let goods = [
-//             {
-//                 title: "Пианино",
-//                 price: 3000,
-//                 count: 25
-//             },
-//             {
-//                 title: "Гитара",
-//                 price: 1200,
-//                 count: 40
-//             },
-//             {
-//                 title: "Барабаны",
-//                 price: 2700,
-//                 count: 12
-//             },
-//             {
-//                 title: "Флейта",
-//                 price: 900,
-//                 count: 50
-//             },
-//             {
-//                 title: "Арфа",
-//                 price: 3400,
-//                 count: 5
-//             }
-//         ];
+let goods = [
+    {
+        title: "Пианино",
+        price: 3000,
+        count: 25
+    },
+    {
+        title: "Гитара",
+        price: 1200,
+        count: 40
+    },
+    {
+        title: "Барабаны",
+        price: 2700,
+        count: 12
+    },
+    {
+        title: "Флейта",
+        price: 900,
+        count: 50
+    },
+    {
+        title: "Арфа",
+        price: 3400,
+        count: 5
+    }
+];
 
 //         Примеры вызова функции:
 //         generateTable(articles); - генерация таблицы со статьями
 //         generateTable(goods); - генерация таблицы с товарами
 
 
+function generateTable(array) {
+    if(array.length == 0) return false;
+    let tableElem = document.createElement("table");
+    tableElem.classList.add("table");
+    let tr = document.createElement("tr");
+    
+    for (let header in array[0]) {
+        let th = document.createElement("th");
+        th.classList.add("th");
+        th.innerText = header;
 
+        tr.append(th);
 
+    }
+    tableElem.append(tr);
+    for (let elem of array){
+        let tr = document.createElement("tr");
+        for(prop in elem){
+            let td = document.createElement("td");
+            td.classList.add("td");
+            td.innerText = elem[prop];
+            tr.append(td);
+        }
+        tableElem.append(tr);
+    }
+    document.querySelector("body").append(tableElem);
 
-
-
-
-
-
-
-
-
-
+    
+}
+console.log(document.write("<h2>Таблица 1</h2>"))
+generateTable(articles)
+console.log(document.write("<h2>Таблица 2</h2>"))
+generateTable(goods)
 
 
 
