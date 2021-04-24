@@ -23,15 +23,15 @@
 
 ## Поиск элементов в DOM дереве:
 1. по значению атрибута id
-`let elem = document.getElementById("slider");` - метод вернет 1 элемент
+`let elem = document.getElementById("slider");`
 2. по значению атрибута name, возвращает коллекцию, даже если элемент один
-`let elements = document.getElementsByName("answer");` - получение элементов формы по значению name
+`let elements = document.getElementsByName("answer");`
 3. по имени тега, возвращает коллекцию, даже если элемент один
 `let elements = document.getElementsByTagName("li");`
 4. по имени css класса, возвращает коллекцию, даже если элемент один
 `let elements = document.getElementsByClassName("orange-border");`
 5. по css селектору, возвращает первый элемент, который удовлетворяет указанному css селектору
-`let elem = document.querySelector("ul > li");` - вернет только 1 элемент
+`let elem = document.querySelector("ul > li");`
 6. по css селектору, возвращает коллекцию элементов, которые удовлетворяют указанному css селектору
 `let elemsByCSS = document.querySelectorAll("input[type=text]");`
    
@@ -39,7 +39,7 @@
 1. Цикл for of
    
 
-      for (let elem of list.children) {  ЕСЛИ ПЕРЕБИРАЕМ КОЛЛЕКЦИЮ HTML ЭЛЕМЕНТОВ ДО ДЕЛАЕМ ЧЕРЕЗ FOR OF
+      for (let elem of list.children) {
          console.log(elem);
       }
 2. Создать массив из коллекции и перебрать с помощью метода forEach
@@ -92,7 +92,7 @@
 4. Удалить класс, если его нет, добавить, если он есть: `divElem.classList.toggle("orange-border");`.
 
 ## Добавление, замена, удаление элементов в HTML
-1. `element.append(...nodes / strings)` – добавляет узлы или строки в конец element; - В НЕГО МЫ ДОБАВЛЯЕМ ЭЛЕМЕНТЫ
+1. `element.append(...nodes / strings)` – добавляет узлы или строки в конец element;
 2. `element.prepend(...nodes / strings)` – добавляет узлы или строки в начало element;
 3. `element.before(...nodes / strings)` – добавляет узлы или строки до element;
 4. `element.after(...nodes / strings)` – добавляет узлы или строки после element;
@@ -129,18 +129,3 @@
 
 ### Добавление таблицы в HTML 
       tableArea.append(table);
-
-
-### Селектор тега css
-
-h2 {} - селектор тега
-
- .left {} селектор класса
-
-#auth {} селектор id
-
-input[type='text'] {} - селектор атрибута
-
-ul a {} - вложенный
-
-.left span {} - дочерний селектор

@@ -35,10 +35,49 @@ function getGoods() {
     };
 }
 
+
+/*<div class="card">
+    <h2></h2>
+    <img src="">
+    <p></p>
+    <p></p>
+</div>*/
+function generateCards(where, object) {
+    for (let propertyName in object) {
+        let cardDiv = document.createElement("div");
+        cardDiv.classList.add("card"); // "card", "text-center"
+
+        let title = document.createElement("h2");
+        title.innerText = object[propertyName].title;
+
+        let img = document.createElement("img");
+        img.setAttribute("src", object[propertyName].img);
+
+        let price = document.createElement("p");
+        price.innerText = `Цена ${object[propertyName].price}`;
+
+        let count = document.createElement("p");
+        count.innerText = `Количество ${object[propertyName].count}`;
+
+        cardDiv.append(title, img, price, count);
+        where.append(cardDiv);
+    }
+}
+
+generateCards(document.querySelector(".items"), getGoods());
+
+
+
+
+
+
+
+
 let date = new Date();
 let day = date.getDate(),
     month = date.getMonth() + 1,
     year = date.getFullYear(),
     hours = date.getHours(),
     minutes = date.getMinutes();
+
 

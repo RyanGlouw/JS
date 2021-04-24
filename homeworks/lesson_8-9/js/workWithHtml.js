@@ -106,7 +106,7 @@ function generateTable(array) {
     for (let header in array[0]) {
         let th = document.createElement("th");
         th.classList.add("th");
-        th.innerText = header;
+        th.innerText = header.toUpperCase();
 
         tr.append(th);
 
@@ -143,3 +143,24 @@ generateTable(goods)
 //     book: "Книга",
 //     postcard: "Открытка"
 // };
+
+function generateField(n, data){
+    n = n >= 3 ? n : 3;
+    let field = document.createElement("div");
+    field.style.cssText = 
+        "margin 0 auto;" +
+        "width 40vw;" +
+        "display: flex;" +
+        "flex-wrap: wrap";
+
+    // n * n - общее колличество ячеек внутри field
+    for(let i = 0; i < n * n; i++){
+        let cell = document.createElement("div")
+        cell.style.border = "1px solid black";
+        cell.style.width = cell.style.height = (40 / n) + 'vw';
+        field.append(cell);
+    }
+    return field;
+}
+
+document.body.append(generateField(4));
