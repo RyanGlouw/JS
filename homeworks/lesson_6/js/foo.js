@@ -3,20 +3,21 @@
 // Например, слово "дом" встречается в строке "дом домик домой одомашненный" 
 // 4 раза.
 
-// function enterStr(word, str){
-// let count = 0;
-// str.split('');
-// for (let i = 0; i < str.length; i++){
-//     if (str[i] === word){
-//         count++;
-//     }
-//     return count;
-// }
-// }
+function enterStr(word, str){
+let count = 0;
+str.split('');
+for (let i = 0; i < str.length; i++){
+    if (str[i] === word){
+        count++;
+    }
+    return count;
+}
+}
 
-// let one = 'дом';
-// let two = 'дом домик домой одомашненный';
-// console.log(enterStr(one,two));
+let one = 'дом';
+let two = 'дом домик домой одомашненный';
+console.log(enterStr(one,two));
+
 
 function getOccurrenceCount(string, stringToSearch) {
     let count = 0

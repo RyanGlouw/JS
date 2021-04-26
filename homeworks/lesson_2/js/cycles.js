@@ -127,3 +127,20 @@ for (let i = 1; i <= 10; i++) {
     // если answer равно 0 -> minimum = tmp
 
 //}
+
+
+let min = 1, max = 100;
+while (true) { // Да - 1, Нет - 0
+let tmp = ma(min + max) / 2;
+let answer = parseInt(prompt(`Это число равно ${tmp} ? Если да - введите 1, нет - введите 0`));
+if (answer === 1) {
+console.log(`Вы загадали число ${tmp}`);
+break;
+}
+else answer = parseInt(prompt(`Ваше число меньше ${tmp}? Если да - введите 1, нет - введите 0`));
+if (answer === 1)
+max = tmp;
+else
+min = tmp;
+tmp = (min + max) / 2;
+}
