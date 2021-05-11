@@ -14,8 +14,18 @@ class Slider {
         // for (let dot of this._dots){
         //     dot.addEventListener("click", this._showByDot); аналог for -а forEach
         // }
-        // this._dots.forEach(dot => dot.addEventListener("click", this._showByDit)); // forEach с html коллекцией не работает (только если коллекции переложить в массив  this._dots = [...document.querySelectorAll(".dot")];)
+        this._dots.forEach(dot => dot.addEventListener("click", this._showByDot.bind(this))); // forEach с html коллекцией не работает (только если коллекции переложить в массив  this._dots = [...document.querySelectorAll(".dot")];)
+        
     }
+ _showByDot({target}){ // из обьекта создается переменная target
+    if(target.classList.contains(".active")) return;
+    this._hideSlider();
+    this._currentIndex = this._dots.indexOf(target);
+    this._showSlide();
+
+
+
+ }
     // _currentIndex = 0;
     // [slide1,slide2,slide3];
     _showPrevious() {
@@ -41,6 +51,10 @@ class Slider {
         this._slider[this._currentIndex].classList.remove("active");
         this._dots[this._currentIndex].classList.remove("active");
     }
+    startShow(interval){ // принимает на вход функцию, interval это секунды
+        setInterval(this._showNext.bind(this), interval);
+    }
 }
 
 let slider = new Slider();
+slider.startShow(3000);
