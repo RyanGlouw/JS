@@ -28,9 +28,13 @@ let cats = [
   }
 ];
 
-new Vue({
-  el: "#app",
-  data: {
-    cats: cats
+let app = Vue.createApp({
+  data() {
+    return {
+      cats: cats
+    };
   }
-})
+
+});
+
+let vm = app.mount("#app");

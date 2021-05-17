@@ -5,16 +5,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VUE</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+  <script src="https://unpkg.com/vue@next"></script>
 </head>
 <body>
   
   <div id="app">
     <ul>
       <li v-for="cat in cats">
-        {{cat.name}} - {{cat.age}} - {{cat.color}} - {{cat.img}}
+        {{cat.name}} - {{cat.age}} - {{cat.color}}
       </li>
     </ul>
+    <img :src="cats.img" height="500">
   </div>
 <script src="./js/main.js"></script>
 </body>
