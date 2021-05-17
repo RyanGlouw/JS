@@ -1,7 +1,6 @@
-let str = '-';
-
-
-for(let i = 1; i <= 9; i++){
-    str += i + '-';
-}
-console.log(str);
+let app = new Vue({
+el: '#app',
+data: {
+    message: 'hello',
+},
+});
