@@ -1,6 +1,3 @@
-
-
-
 let cats = [
   {
     name: "Люся",
@@ -34,7 +31,6 @@ let app = Vue.createApp({
       cats: cats
     };
   }
-
 });
 
 let vm = app.mount("#app");

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lesson_13</title>
+  <script src="https://unpkg.com/vue@next"></script>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<div id="app">
+  <div>
+    <!-- Добавить событие можно 2мя способами 1й v-on:click="" / 2й @click -->
+    <!-- Класс active должен быть в css, а currentTab === tab это условие при котором класс добавиться к элементу  -->
+    <span class="tab-menu" 
+    v-bind:class="{active: currentTab === tab}" 
+    v-for="tab in tabs"
+    v-on:click="currentTab = tab">
+      {{tab.toUpperCase()}}
+    </span>
+
+    <!-- Отрисовка элементов в зависимости от условий -->
+    <!-- В v-show при соблюдения условий у элемента будет diplay block а при НЕ соблюдении будет display none -->
+    <div v-show="currentTab === tabs[0]">
+      <h2>Все книги</h2>
+      <div v-for="allbook in allbooks">
+        <h2>{{allbook.title.toUpperCase()}}</h2>
+        <p>{{allbook.description}}</p>
+        <img :src="allbook.img">
+        <div>
+          <button v-bind:disabled="allbook.inList"
+          @click="addToMyList(allbook)">
+            <!-- если метод не принимает аргументов то пишем просто имя метода без ()
+            если метод принимает аргументы то указывает скобки () -->
+
+            {{allbook.inList ? "Уже в списке" : "Добавить в список"}}
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Если условие будет соблюдено то удаляется div и снова добавляется а если не соблюдено то удаляется и не появляется -->
+    <div v-if="currentTab === tabs[1]">
+      <h2 v-if="!myList.length">В списке нет книг</h2>
+      <div v-else>
+        <h2>Мой список</h2>
+        <!-- В значение key передается уникальное значение из элемента массива -->
+        <div v-for="(book,i) in sortedMyList" :key="book.title">
+          <h2>{{book.title.toUpperCase()}}</h2>
+          <p>{{book.description}}</p>
+          <img :src="book.img">
+          <div>
+          <button @click="deleteFromMyList(book,i)">
+            Удалить из списка
+          </button>
+        </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+<body>
+  <script src="./js/lesson_13.js"></script>
+</body>
+
+</html>

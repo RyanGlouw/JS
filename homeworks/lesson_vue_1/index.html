@@ -13,9 +13,9 @@
     <ul>
       <li v-for="cat in cats">
         {{cat.name}} - {{cat.age}} - {{cat.color}}
+        <img :src="cat.img" height="250"/>
       </li>
     </ul>
-    <img :src="cats.img" height="500">
   </div>
 <script src="./js/main.js"></script>
 </body>
