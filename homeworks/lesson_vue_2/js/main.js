@@ -81,11 +81,6 @@ let app = Vue.createApp({
   computed: {
     sortedMyList(){
       return this.allgoods.sort((b1, b2)=>b2.count - b1.count);
-    },
-    backcolor(){
-      if(this.allgoods.count == 0){
-        return zero
-      }
     }
   }
 });

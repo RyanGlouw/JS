@@ -12,7 +12,7 @@
 
   <div id="app">
     <div v-for="good in sortedMyList"
-    v-bind:class="{ backcolor() }">
+    v-bind:class="{}">
       <h2>{{good.title}}</h2>
      <span>Цена: {{good.price}}</span> 
      <!-- узнать почему если count тоже span то перенос строки не происходит -->
