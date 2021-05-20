@@ -11,8 +11,7 @@
   <link rel="stylesheet" href="./css/style.css">
 
   <div id="app">
-    <div v-for="good in sortedMyList"
-    v-bind:class="{}">
+    <div v-for="good in sortedMyList" v-bind:class="[{zero: good.count == 0}, {'not-many': good.count > 0 && good.count < 20}, {many: good.count > 20}]">
       <h2>{{good.title}}</h2>
      <span>Цена: {{good.price}}</span> 
      <!-- узнать почему если count тоже span то перенос строки не происходит -->
